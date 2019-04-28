@@ -6,3 +6,21 @@ int absolute(int x)
 	else
 		return x;
 }
+int do2(int x)
+{
+	return x * x;
+}
+int do3(int x)
+{
+	return x * x * x;
+}
+int do4(int x)
+{
+	return x * x * x * x;
+}
+
+
+
+
+
+
