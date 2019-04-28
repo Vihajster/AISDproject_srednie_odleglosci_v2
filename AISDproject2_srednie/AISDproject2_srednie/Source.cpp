@@ -16,27 +16,28 @@ int main()
 
 	for (int i = 0; i < num_of_consecutive_lines; i++)
 	{
-		unsigned int D = 0;
+		double D = 0;
 		cin >> dimensions >> length >> edges_paired >> kings_type;
 		int iter = 0;
+
 		if (edges_paired == 0)
 		{
-			D += 2 * pow(length, 2) * sumOfDisstancesInARow(length);
+			D = 2 * pow(length, 2) * sumOfDisstancesInARow(length);
 		}
 		else if (edges_paired ==1)
 		{
-			D += pow(length, 2) * sumOfDisstancesInARow(length);
+			D = pow(length, 2) * sumOfDisstancesInARow(length);
 			D += pow(length, 2) * sumOfDisstancesInALoop(length);
 		}
 		else if (edges_paired == 2)
 		{
-			D += 2 * pow(length, 2) * sumOfDisstancesInALoop(length);
+			D = 2 * pow(length, 2) * sumOfDisstancesInALoop(length);
 		}
 
 
 
 		D = D / (pow(length, 4) - pow(length, 2));
-		cout << D << endl;
+		cout << (int)D << endl;
 		//cout << "iter=" << iter << endl;
 	}
 
