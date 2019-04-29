@@ -1,4 +1,9 @@
 #pragma once
+#include <cstdlib>
+#include <math.h>       /* pow */
+#include <iostream>
+using namespace std;
+
 int absolute(int x)
 {
 	if (x < 0)
@@ -6,21 +11,33 @@ int absolute(int x)
 	else
 		return x;
 }
-int do2(int x)
+
+unsigned int sumOfDisstancesInARow(int length)
 {
-	return x * x;
+	int sum=0;
+	for (size_t x1 = 0; x1 < length; x1++)
+	{
+		for (size_t x2 = 0; x2 < length; x2++)
+		{
+			int distanceX = absolute(x2 - x1);
+			sum += distanceX;
+		}
+	}
+	return sum;
 }
-int do3(int x)
+
+unsigned int sumOfDisstancesInALoop(int length)
 {
-	return x * x * x;
+	int sum;
+	if (length % 2)
+		sum = (length / 2 + 1) * (length / 2);	
+	else
+		sum = pow(length / 2, 2);
+
+	sum *= length;
+
+
+	return sum;
 }
-int do4(int x)
-{
-	return x * x * x * x;
-}
-
-
-
-
 
 
