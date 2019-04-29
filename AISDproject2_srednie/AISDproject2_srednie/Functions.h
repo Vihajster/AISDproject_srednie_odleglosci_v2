@@ -21,23 +21,20 @@ unsigned int sumOfDisstancesInARow(int length)
 		{
 			int distanceX = absolute(x2 - x1);
 			sum += distanceX;
-			cout << distanceX;
 		}
 	}
-	cout << endl;
 	return sum;
 }
 
 unsigned int sumOfDisstancesInALoop(int length)
 {
 	int sum;
-	if (length%2)
-		sum = (length / 2 +1)* length/2;
+	if (length % 2)
+		sum = (length / 2 + 1) * (length / 2);	
 	else
 		sum = pow(length / 2, 2);
 
 	sum *= length;
-	cout << sum << endl;;
 
 
 	return sum;
